@@ -1,9 +1,14 @@
+@import "../../app.scss";
+
 .rightBar {
+    @include themify($themes) {
     flex: 3;
     position: sticky;
     top: 70px;
     height: calc(100vh - 70px);
     overflow: scroll;
+    background-color: themed("bgSoft");
+    color: themed("textColor");
 
     &::-webkit-scrollbar {
         display: none;
@@ -13,6 +18,12 @@
         padding: 1rem;
 
         .item {
+            -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+            -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+            box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.09);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: themed("bg");
 
             span {
                 color: gray;
@@ -28,6 +39,7 @@
                     display: flex;
                     align-items: center;
                     gap: 1rem;
+                    position: relative;
 
                     img {
                         height: 2.5rem;
@@ -36,9 +48,24 @@
                         object-fit: cover;
                     }
 
+                    .online {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        background-color: limegreen;
+                        position: absolute;
+                        top: 0;
+                        left: 1.8rem;
+                    }
+
+                    p {
+                        color: themed("textColorSoft");
+                    }
+
                     span {
                         font-weight: 500;
                         font-size: 1.1rem;
+                        color: themed('textColor');
                     }
                 }
 
@@ -56,9 +83,14 @@
                         &:first-child {
                             background-color: #5271ff;
                         }
+
+                        &:last-child {
+                            background-color: #f0544f;
+                        }
                     }
                 }
             }
         }
     }
+}
 }
