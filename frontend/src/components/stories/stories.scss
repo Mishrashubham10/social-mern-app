@@ -1,0 +1,76 @@
+@import "../../app.scss";
+
+.stories {
+    display: flex;
+    gap: .5rem;
+    height: 35vh;
+    margin-bottom: 1.4rem;
+
+    @include mobile {
+        height: 50px;
+        justify-content: space-around;
+    }
+
+    @include tablet {
+        height: 15vh;
+        gap: 1rem;
+    }
+
+    .story {
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+
+        @include mobile {
+            flex: none;
+            width: 3.125rem;
+            height: 3.125rem;
+            border-radius: 50%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        span{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-weight: 500;
+
+            @include mobile {
+                display: none;
+            }
+        }
+
+        button {
+            position: absolute;
+            bottom: 2rem;
+            left: 10px;
+            color: white;
+            background-color: #5271ff;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            cursor: pointer;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include mobile {
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 2rem;
+                height: 2rem;
+                margin: auto;
+            }
+        }
+    }
+}

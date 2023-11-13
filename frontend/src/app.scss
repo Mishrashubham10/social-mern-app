@@ -39,6 +39,24 @@ $themes: (
     @return map-get($theme-map, $key);
 }
 
+@mixin mobile {
+    @media (max-width: 480px) {
+        @content;
+    } 
+}
+
+@mixin tablet {
+    @media (max-width: 960px) {
+        @content;
+    } 
+}
+
+@mixin desktop {
+    @media (max-width: 1200px) {
+        @content;
+    } 
+}
+
 *,
 *::after,
 *::before {

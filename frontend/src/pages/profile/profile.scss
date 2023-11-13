@@ -1,1 +1,132 @@
-.profile {}
+@import "../../app.scss";
+
+.profile {
+    @include themify($themes) {
+        background-color: themed("bgSoft");
+
+        .images {
+            width: 100%;
+            height: 18.75rem;
+            position: relative;
+
+            .cover {
+                width: 100%;
+                height: 100%;
+            }
+
+            .profilePic{
+                width: 12.5rem;
+                height: 12.5rem;
+                border-radius: 50%;
+                object-fit: cover;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                top: 12.5rem;
+            }
+        }
+
+        .profileContainer {
+            padding: 1.25rem 3.5rem;
+
+            @include mobile {
+                padding: .6rem;
+            }
+
+            @include tablet {
+                padding: 1.25rem;
+            }
+
+        .uInfo {
+            height: 18rem;
+            -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        border-radius: 1rem;
+        background-color: themed("bg");
+        color: themed('textColor');
+        padding: 3.125rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        @include mobile {
+            flex-direction: column;
+            height: 30vh;
+            padding: 1.25rem;
+            margin-top: 6rem;
+        }
+
+        .left {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            gap: .2rem;
+            font-size: 2rem;
+
+            @include tablet {
+                flex-wrap: wrap;
+            }
+
+            a {
+                color: themed("textColorSoft");
+            }
+        }
+
+        .center {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+
+            span {
+                font-size: 1.8rem;
+                font-weight: 500;
+            }
+
+            .info {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                .item {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    color: themed("textColorSoft");
+
+                    span {
+                        font-size: .7rem;
+                    }
+                }
+            }
+
+            button {
+                border: none;
+                background-color: #5271ff;
+                color: white;
+                padding: .7rem 1.25rem;
+                border-radius: 5px;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: bold;
+            }
+        }
+
+        .right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: .5rem;
+        }
+        }
+    }
+    }
+}
